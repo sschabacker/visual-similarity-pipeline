@@ -1,0 +1,6 @@
+model,honest_r_vs_individual
+Gradient Boosting,0.181
+Ridge,0.175
+Lasso,0.174
+Random Forest,0.166
+Linear,0.137

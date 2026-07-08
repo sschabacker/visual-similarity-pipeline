@@ -1,0 +1,21 @@
+# Big data: never in the repo (host on OSF/Zenodo instead)
+*.pkl
+*.npy
+*_features.csv
+*similarity_matrix*
+konkle_similarity_pairs.csv
+Models/
+Features/
+Similarity_Matrices/
+
+# Keep the demo bundle
+!sample_data/
+!sample_data/*.csv
+
+# Local archive and cruft
+_old/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.venv/

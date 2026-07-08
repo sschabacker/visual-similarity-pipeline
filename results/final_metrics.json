@@ -1,0 +1,13 @@
+{
+  "consensus_r": 0.376,
+  "consensus_r_ci95": [
+    0.311,
+    0.438
+  ],
+  "noise_ceiling": 0.746,
+  "noise_ceiling_sd": 0.014,
+  "pct_of_ceiling": 50,
+  "n_unique_test_pairs": 663,
+  "split": "image-disjoint (leak-proof), 80/20 by image, seed 42",
+  "note": "Full-data results. Demo mode on sample_data/ produces illustrative numbers, not these."
+}

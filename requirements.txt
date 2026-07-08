@@ -1,0 +1,9 @@
+numpy
+pandas
+scipy
+scikit-learn
+
+# Only needed if you also publish the feature-extraction step (requires a GPU):
+# torch
+# timm
+# git+https://github.com/openai/CLIP.git

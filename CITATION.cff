@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Visual Similarity ML Pipeline"
+authors:
+  - family-names: "Schabacker"
+    given-names: "Sydney"
+version: "1.0.0"
+date-released: "2026-07-03"
+license: "AGPL-3.0"
+url: "https://github.com/sschabacker/visual-similarity-pipeline"
