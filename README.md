@@ -4,9 +4,27 @@ Predicting **human similarity judgments** on images from deep vision-model featu
 
 ## Headline result
 
-On a **leak-free, image-disjoint** train/test split, the model predicts **consensus human similarity at r ≈ 0.38** (95% CI [0.31, 0.44]) against a **split-half noise ceiling of 0.75**, recovering roughly **half of the reliably predictable structure**. A naive pair-level split had inflated this to r ≈ 0.34 through test-set leakage; correcting the split revealed the honest number and, with the noise ceiling, put it in context.
+On a **leak-free, image-disjoint** train/test split, the model predicts
+**consensus human similarity at r ≈ 0.38** (95% CI [0.31, 0.44]) against a
+**split-half noise ceiling of 0.75**, recovering roughly **half of the
+reliably predictable structure**.
 
-> The interesting part isn't the 0.38, it's the gap. Human raters agree strongly (ceiling 0.75), and frozen perceptual features capture about half of that agreement. The other half, not recoverable from CLIP/DINO, is where categorical and semantic structure likely lives.
+An earlier version of this pipeline split by **pair** rather than by image,
+letting the same image appear on both sides of the train/test boundary, and
+reported r ≈ 0.34 against individual judgments. Fixing the split cut
+same-target performance roughly in half (all five models converge at
+r ≈ 0.14 to 0.18 against individual judgments), showing the leaky number
+was mostly memorization. The second problem was the evaluation itself:
+individual judgments are noisy, and raters only agree with each other at
+0.75, so no model scored against single raters can approach 1.0. Scoring
+the clean model against the rater **consensus** and reporting it against
+the **noise ceiling** gives a number that is both correct and
+interpretable: 0.38 of an achievable 0.75.
+
+> The interesting part isn't the 0.38, it's the gap. Human raters agree
+> strongly (ceiling 0.75), and frozen perceptual features capture about half
+> of that agreement. The other half, not recoverable from CLIP/DINO, is where
+> categorical and semantic structure likely lives.
 
 ## What it does
 
