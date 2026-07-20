@@ -4,7 +4,7 @@ Predicting **human similarity judgments** on images from deep vision-model
 features (CLIP + DINO), and measuring how much of human similarity is
 actually recoverable from perception alone.
 
-![Headline result](results/headline_plot.png)
+![Headline result](results/headline.png)
 
 ## Headline result
 
