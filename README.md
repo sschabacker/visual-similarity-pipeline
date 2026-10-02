@@ -97,7 +97,7 @@ pip install -r requirements.txt
 bundle in `sample_data/`, so you can see the full pipeline execute without
 the large dataset. Demo numbers are illustrative, not the headline result: the
 outputs saved in the notebook come from a demo run (127 test pairs with repeats),
-so they differ from the headline above. Demo mode needs roughly 3 GB of free RAM.
+so they differ from the headline above. Demo mode needs a couple of GB of free RAM.
 The **Open in Colab** badge above runs it with no local setup.
 
 **Full data:** set `DEMO_MODE = False` and point the paths at the full
