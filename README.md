@@ -4,6 +4,8 @@ Predicting **human similarity judgments** on images from deep vision-model
 features (CLIP + DINO), and measuring how much of human similarity is
 actually recoverable from perception alone.
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sschabacker/visual-similarity-pipeline/blob/main/notebooks/01_similarity_pipeline.ipynb)
+
 ![Headline result](results/headline.png)
 
 ## Headline result
@@ -11,7 +13,8 @@ actually recoverable from perception alone.
 On a **leak-free, image-disjoint** train/test split, the model predicts
 **consensus human similarity at r ≈ 0.38** (95% CI [0.31, 0.44]) against a
 **split-half noise ceiling of 0.75**; a ceiling-normalized score of about
-**0.51**, or roughly half of the achievable ceiling.
+**0.50**, or roughly half of the achievable ceiling. ("Half" is a statement about
+correlations. In variance terms, r² ≈ 0.14 of an achievable ≈ 0.56, about a quarter.)
 
 An earlier version of this pipeline split by **pair** rather than by image,
 letting the same image appear on both sides of the train/test boundary, and
@@ -27,7 +30,7 @@ interpretable: 0.38 of an achievable 0.75.
 
 > The interesting part isn't the 0.38, it's the gap. Human raters agree
 > strongly (ceiling 0.75), and frozen perceptual features capture about half
-> of that agreement. The other half, not recoverable from CLIP/DINO, is where
+> of that agreement, in correlation terms. The other half, not recoverable from CLIP/DINO, is where
 > categorical and semantic structure likely lives.
 
 ## Why this question
@@ -74,6 +77,7 @@ visual-similarity-pipeline/
 ├── CITATION.cff
 ├── requirements.txt
 ├── similarity_model.py         # reusable core
+├── make_headline_figure.py     # regenerates results/headline.png from results/final_metrics.json
 ├── make_sample_bundle.py       # builds the demo slice from the full data
 ├── notebooks/
 │   └── 01_similarity_pipeline.ipynb   # canonical trunk (runs the whole story)
@@ -91,7 +95,10 @@ pip install -r requirements.txt
 
 **Demo mode (default):** the canonical notebook runs end to end on the small
 bundle in `sample_data/`, so you can see the full pipeline execute without
-the large dataset. Demo numbers are illustrative, not the headline result.
+the large dataset. Demo numbers are illustrative, not the headline result: the
+outputs saved in the notebook come from a demo run (127 test pairs with repeats),
+so they differ from the headline above. Demo mode needs roughly 3 GB of free RAM.
+The **Open in Colab** badge above runs it with no local setup.
 
 **Full data:** set `DEMO_MODE = False` and point the paths at the full
 feature and pair files (hosted separately; see below). This reproduces the
